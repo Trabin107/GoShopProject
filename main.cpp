@@ -53,16 +53,16 @@ int main() {
     quadtree.insert(-15, 5, "Walmart Supercenter B");
     quadtree.insert(5, -10, "Walmart Neighborhood C");
 
-    cout << "GoShop Data Structures Demonstration\n";
+    cout << "GoShop Demonstration\n";
     cout << "------------------------------------\n";
 
     bool running = true;
     while (running) {
         cout << "\nMain Menu:\n";
-        cout << "1. Graph (Store Navigation)\n";
+        cout << "1. Navigate the store (Graph)\n";
         cout << "2. Skip List (Aisle Data)\n";
-        cout << "3. Disjoint Set (Item Grouping)\n";
-        cout << "4. QuadTree (Nearest Store Location)\n";
+        cout << "3. Item Grouping (Skip List)\n";
+        cout << "4. Nearest Store Location(Quadtree)\n";
         cout << "0. Exit\n";
         cout << "Enter choice: ";
         int choice;
@@ -80,16 +80,16 @@ int main() {
             // Graph operations submenu
             bool back = false;
             while (!back) {
-                cout << "\nGraph Menu (Store Navigation):\n";
-                cout << "1. Add Vertex (location)\n";
-                cout << "2. Add Edge (path between locations)\n";
-                cout << "3. Remove Vertex\n";
-                cout << "4. Remove Edge\n";
-                cout << "5. Update Edge Weight\n";
-                cout << "6. Display Graph\n";
-                cout << "7. Find Shortest Path\n";
+                cout << "\nStore Navigation(Graph):\n";
+                cout << "1. Add new store location\n";
+                cout << "2. Connect two stores(path between locations)\n";
+                cout << "3. Remove store\n";
+                cout << "4. Remove path between stores\n";
+                cout << "5. Update Distance between stores\n";
+                cout << "6. View  full store map\n";
+                cout << "7. Find Shortest shopping route\n";
                 cout << "0. Back to Main Menu\n";
-                cout << "Enter choice: ";
+                cout << "Enter  your choice: ";
                 int gChoice;
                 if (!(cin >> gChoice)) {
                     cin.clear();
@@ -100,37 +100,37 @@ int main() {
                 int weight;
                 switch (gChoice) {
                     case 1:
-                        cout << "Enter new vertex name: ";
+                        cout << "Enter new store name: ";
                         getline(cin >> ws, label);
                         graph.addVertex(label);
                         break;
                     case 2:
-                        cout << "Enter source vertex name: ";
+                        cout << "Enter source store name: ";
                         getline(cin >> ws, label);
-                        cout << "Enter destination vertex name: ";
+                        cout << "Enter destination store name: ";
                         getline(cin >> ws, label2);
-                        cout << "Enter edge weight (distance): ";
+                        cout << "Enter distance: ";
                         cin >> weight;
                         graph.addEdge(label, label2, weight);
                         break;
                     case 3:
-                        cout << "Enter vertex name to remove: ";
+                        cout << "Enter store name to remove: ";
                         getline(cin >> ws, label);
                         graph.removeVertex(label);
                         break;
                     case 4:
-                        cout << "Enter source vertex name: ";
+                        cout << "Enter source store name: ";
                         getline(cin >> ws, label);
-                        cout << "Enter destination vertex name: ";
+                        cout << "Enter destination store name: ";
                         getline(cin >> ws, label2);
                         graph.removeEdge(label, label2);
                         break;
                     case 5:
-                        cout << "Enter source vertex name: ";
+                        cout << "Enter source store name: ";
                         getline(cin >> ws, label);
-                        cout << "Enter destination vertex name: ";
+                        cout << "Enter destination store name: ";
                         getline(cin >> ws, label2);
-                        cout << "Enter new weight: ";
+                        cout << "Enter new distance: ";
                         cin >> weight;
                         graph.updateEdge(label, label2, weight);
                         break;
@@ -153,7 +153,7 @@ int main() {
                             }
                             cout << "\n";
                         } else {
-                            cout << "No path found or invalid vertices.\n";
+                            cout << "No valid path found. Check the store name\n";
                         }
                         break;
                     }
@@ -161,7 +161,7 @@ int main() {
                         back = true;
                         break;
                     default:
-                        cout << "Invalid choice. Try again.\n";
+                        cout << "!Invalid choice. Try again.\n";
                         break;
                 }
             }
@@ -171,8 +171,8 @@ int main() {
             bool back = false;
             while (!back) {
                 cout << "\nSkip List Menu (Aisle Data):\n";
-                cout << "1. Insert Aisle Data\n";
-                cout << "2. Search Aisle\n";
+                cout << "1. Add new Aisle with item (Insert Aisle Data)\n";
+                cout << "2. Search Aisle Item\n";
                 cout << "3. Update Aisle Data\n";
                 cout << "4. Remove Aisle Data\n";
                 cout << "5. Display All Aisle Data\n";
@@ -232,10 +232,10 @@ int main() {
             // Disjoint Set operations submenu
             bool back = false;
             while (!back) {
-                cout << "\nDisjoint Set Menu (Item Grouping):\n";
-                cout << "1. Add Item (new set)\n";
-                cout << "2. Union (Group Two Items)\n";
-                cout << "3. Find Item's Set Representative\n";
+                cout << "\nItem Grouping (Disjoint Set):\n";
+                cout << "1. Add new Item (new set)\n";
+                cout << "2. Group Items into Category\n";
+                cout << "3. Check item category\n";
                 cout << "4. Display All Item Groups\n";
                 cout << "5. Remove Item\n";
                 cout << "6. Update Item Name\n";
@@ -299,10 +299,10 @@ int main() {
             bool back = false;
             while (!back) {
                 cout << "\nQuadTree Menu (Nearest Store Location):\n";
-                cout << "1. Insert Store Location\n";
+                cout << "1.Add new Store\n";
                 cout << "2. Remove Store\n";
-                cout << "3. Find Nearest Store\n";
-                cout << "4. Display All Store Locations\n";
+                cout << "3. Locate Nearest Store\n";
+                cout << "4. Display All available store\n";
                 cout << "0. Back to Main Menu\n";
                 cout << "Enter choice: ";
                 int qChoice;
@@ -360,6 +360,6 @@ int main() {
         }
     }
 
-    cout << "Exiting GoShop Demonstration. Goodbye!\n";
+    cout << "Exiting GoShop. Have a nice day!\n";
     return 0;
 }
